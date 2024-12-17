@@ -129,8 +129,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6105873963726779416, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_Name
-      value: Ball Variant
+      value: White Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6840309704101724420, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 916966898ad97fe47ab45dddc2f99a26, type: 2}
     - target: {fileID: 7586622109694580218, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.97166294
@@ -505,8 +509,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6105873963726779416, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_Name
-      value: Ball Variant (2)
+      value: Green Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6840309704101724420, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 86a30258613304e4989ee01aca975164, type: 2}
     - target: {fileID: 7586622109694580218, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.354155
@@ -574,8 +582,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6105873963726779416, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_Name
-      value: Ball Variant (1)
+      value: Red Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6840309704101724420, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cfa0e059c81cb9844a84727a522ccc5c, type: 2}
     - target: {fileID: 7586622109694580218, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.144
@@ -643,8 +655,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6105873963726779416, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_Name
-      value: Ball Variant (3)
+      value: Blue Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6840309704101724420, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb91d26831939a14e9a1a513b1a9d35d, type: 2}
     - target: {fileID: 7586622109694580218, guid: 8203345a736e5724b9562d3eb6835d0e, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.0436
@@ -860,8 +876,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3817408830641982444, guid: 343d2056de1fefe4b8f13ea49a814553, type: 3}
       propertyPath: m_Name
-      value: Ball
+      value: Black Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 4515963021868367600, guid: 343d2056de1fefe4b8f13ea49a814553, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ccceace14a22e34baa4479708c73cf7, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
