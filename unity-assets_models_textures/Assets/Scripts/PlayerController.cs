@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         ApplyGravity();
 
-        if (transform.position.y <= -6f ) {
+        if (transform.position.y <= -15f ) {
             Respawn();
         }
 
