@@ -1,3 +1,5 @@
 # Unity Assets Models and Textures 
 
-## Credit to: Skyboxes: Farland Skies - Cloudy Crown
+# Credits
+### Skyboxes: Farland Skies - Cloudy Crown
+### Models: Kenney's Nature Pack Extended
