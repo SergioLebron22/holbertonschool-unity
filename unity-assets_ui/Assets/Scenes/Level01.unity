@@ -16019,7 +16019,7 @@ MonoBehaviour:
   player: {fileID: 1545592396}
   offset: {x: 0, y: 0, z: 0}
   rotationSpeed: 3
-  isInverted: 1
+  isInverted: 0
 --- !u!1001 &1383671851
 PrefabInstance:
   m_ObjectHideFlags: 0
