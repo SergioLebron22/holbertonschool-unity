@@ -3,6 +3,7 @@ using UnityEngine;
 public class WinTrigger : MonoBehaviour
 {
     public Timer timerScript;
+    public GameObject winCanvas;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +14,9 @@ public class WinTrigger : MonoBehaviour
         if (other.CompareTag("Player")) {
             if (timerScript != null) {
                 timerScript.StopTimer();
+                timerScript.Win();
+                winCanvas.SetActive(true);
+
             }
         }
     }

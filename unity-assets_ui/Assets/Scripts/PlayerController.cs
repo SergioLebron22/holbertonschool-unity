@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
             Respawn();
         }
 
-        
+        if (Input.GetKeyDown(KeyCode.T)) {
+            transform.position = new Vector3(9, 1, 160);
+        }
 
     }
 

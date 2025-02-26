@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class Timer : MonoBehaviour
 {
     public float timeElapsed = 0f;
     public Text timerText;
+    public TextMeshProUGUI finalTimeText;
     private bool isRunning = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,12 +35,17 @@ public class Timer : MonoBehaviour
 
     public void StopTimer() {
         isRunning = false;
-        timerText.fontSize = 60;
-        timerText.color = Color.green;
+        timerText.gameObject.SetActive(false);
     }
 
     public void ResetTimer() {
         timeElapsed = 0f;
         timerText.text = "0:00.00";
+    }
+
+    public void Win() {
+        if (!isRunning) {
+            finalTimeText.text = timerText.text;
+        }
     }
 }
