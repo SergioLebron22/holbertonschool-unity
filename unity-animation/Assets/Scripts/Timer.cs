@@ -31,6 +31,10 @@ public class Timer : MonoBehaviour
 
     public void StartTimer() {
         isRunning = true;
+        if (timerText != null)
+        {
+            timerText.gameObject.SetActive(true);
+        }
     }
 
     public void StopTimer() {
