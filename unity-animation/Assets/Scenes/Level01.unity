@@ -25110,10 +25110,18 @@ PrefabInstance:
       propertyPath: finalTimeText
       value: 
       objectReference: {fileID: 1679220608}
+    - target: {fileID: 5332420050705641838, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: m_SkinWidth
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 5956798123162258625, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 20792adb2a89ac643b9c81c853873a7d, type: 2}
+    - target: {fileID: 5956798123162258625, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8634605646118624446, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
       propertyPath: pauseCanvas
       value: 

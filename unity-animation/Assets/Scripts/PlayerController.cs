@@ -36,8 +36,9 @@ public class PlayerController : MonoBehaviour
     void MovePlayer()
     {
         isGrounded = controller.isGrounded;
-        if (isGrounded && velocity.y < 0) {
-            velocity.y = 0f;
+        if (isGrounded && velocity.y < 0) 
+        {
+            velocity.y = -3f;
         }
 
         float HorizontalInput = Input.GetAxis("Horizontal");
@@ -58,7 +59,8 @@ public class PlayerController : MonoBehaviour
         // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            velocity.y += Mathf.Sqrt(jumpHeight * 2f * gravity);
+            Debug.Log("Jump triggered");
+            velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
         }
 
     }
@@ -69,7 +71,7 @@ public class PlayerController : MonoBehaviour
         {
             if (velocity.y < 0)
             {
-                velocity.y = -2f;
+                velocity.y = -3f;
             }
         }
         else
