@@ -24,8 +24,13 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
+        Debug.Log($"isGrounded: {isGrounded}, velocity.y: {velocity.y}, IsFalling: {!isGrounded && velocity.y < -12f}");
+
+        animator.SetBool("isGrounded", isGrounded);
+        animator.SetBool("IsFalling", !isGrounded && velocity.y < -12f); 
+
         MovePlayer();
-        ApplyGravity();
+        ApplyGravity(); 
 
         if (transform.position.y <= fallThreshold)
         {
@@ -86,5 +91,12 @@ public class PlayerController : MonoBehaviour
     {
         transform.position = respawnPosition;
         velocity = Vector3.zero; // Reset velocity when respawning
+    }
+
+    bool CheckIfGrounded()
+    {
+        float groundCheckDistance = 0.2f; // Distance to check for ground
+        Vector3 origin = transform.position + Vector3.up * 0.1f; // Slightly above the player's position
+        return Physics.Raycast(origin, Vector3.down, groundCheckDistance);
     }
 }
