@@ -3,14 +3,17 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 6f;
+    private float rotationSpeed = 10f;
     public float jumpHeight = 3f;
     public float gravity = 20f;
-    public Transform cameraTransform;
+    public Camera followCamera;
+    public Vector3 respawnPosition = new Vector3(0, 50, 0);
+    public float fallThreshold = -15f;
 
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
-    
+    public Animator animator;
 
     void Start()
     {
@@ -19,62 +22,67 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        isGrounded = controller.isGrounded; 
+        isGrounded = controller.isGrounded;
 
         MovePlayer();
         ApplyGravity();
 
-        if (transform.position.y <= -15f ) {
+        if (transform.position.y <= fallThreshold)
+        {
             Respawn();
         }
-
-        if (Input.GetKeyDown(KeyCode.T)) {
-            transform.position = new Vector3(9, 1, 160);
-        }
-
     }
 
     void MovePlayer()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
-
-        Vector3 camForward = cameraTransform.forward;
-        camForward.y = 0; 
-        camForward.Normalize();
-
-        Vector3 camRight = cameraTransform.right;
-        camRight.y = 0;
-        camRight.Normalize();
-
-        Vector3 moveDirection = camForward * moveZ + camRight * moveX;
-
-        if (moveDirection.magnitude > 0.1f)
-        {
-            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 10f);
+        isGrounded = controller.isGrounded;
+        if (isGrounded && velocity.y < 0) {
+            velocity.y = 0f;
         }
+
+        float HorizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movementInput = Quaternion.Euler(0, followCamera.transform.eulerAngles.y, 0) * new Vector3(HorizontalInput, 0, verticalInput);
+        Vector3 moveDirection = movementInput.normalized;
 
         controller.Move(moveDirection * speed * Time.deltaTime);
 
+        if (moveDirection != Vector3.zero) {
+            Quaternion wantedRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationSpeed * Time.deltaTime);
+        }
+
+        animator.SetFloat("Speed", moveDirection.magnitude * speed);
+
+        // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity); 
+            velocity.y += Mathf.Sqrt(jumpHeight * 2f * gravity);
         }
+
     }
 
     void ApplyGravity()
     {
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded)
         {
-            velocity.y = -2f;
+            if (velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+        }
+        else
+        {
+            velocity.y -= gravity * Time.deltaTime;
         }
 
-        velocity.y -= gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime); 
+        controller.Move(velocity * Time.deltaTime);
     }
 
-    void Respawn() {
-        transform.position = new Vector3(0, 50, 0);
+    void Respawn()
+    {
+        transform.position = respawnPosition;
+        velocity = Vector3.zero; // Reset velocity when respawning
     }
 }

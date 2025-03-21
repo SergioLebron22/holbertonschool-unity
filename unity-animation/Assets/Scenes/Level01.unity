@@ -11185,6 +11185,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f67a945643b95543987b5f4f23ab332, type: 3}
   m_PrefabInstance: {fileID: 1452433234}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1008204462 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5956798123162258625, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+  m_PrefabInstance: {fileID: 8541551883913340617}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1010061801
 GameObject:
   m_ObjectHideFlags: 0
@@ -25081,6 +25086,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 2460063661205808691, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1008204462}
+    - target: {fileID: 2460063661205808691, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: followCamera
+      value: 
+      objectReference: {fileID: 1382423445}
     - target: {fileID: 2460063661205808691, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
       propertyPath: cameraTransform
       value: 
