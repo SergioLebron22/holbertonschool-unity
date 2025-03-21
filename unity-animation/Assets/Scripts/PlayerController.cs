@@ -59,8 +59,8 @@ public class PlayerController : MonoBehaviour
         // Jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("Jump triggered");
             velocity.y = Mathf.Sqrt(jumpHeight * 2f * gravity);
+            animator.SetTrigger("Jump");
         }
 
     }
