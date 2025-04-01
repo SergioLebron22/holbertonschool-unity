@@ -8,9 +8,11 @@ public class WinTrigger : MonoBehaviour
     void Start()
     {
         timerScript = FindObjectOfType<Timer>();
+        Debug.Log("Timer script found: " + (timerScript != null));
     }
 
     private void OnTriggerEnter(Collider other) {
+        Debug.Log("Trigger entered by: " + other.name + " with tag: " + other.tag);
         if (other.CompareTag("Player")) {
             if (timerScript != null) {
                 timerScript.StopTimer();

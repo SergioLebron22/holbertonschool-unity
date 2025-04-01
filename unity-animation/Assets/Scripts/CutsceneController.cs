@@ -9,7 +9,9 @@ public class CutsceneController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         timerScript = FindObjectOfType<Timer>();
+        Debug.Log("Timer script found: " + (timerScript != null));
         // playerController = FindObjectOfType<PlayerController>();
         mainCamera.SetActive(false);
         playerController.SetActive(false);

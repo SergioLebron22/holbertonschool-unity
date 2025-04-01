@@ -130,7 +130,10 @@ MonoBehaviour:
   speed: 10
   jumpHeight: 3
   gravity: 20
-  cameraTransform: {fileID: 0}
+  followCamera: {fileID: 0}
+  respawnPosition: {x: 0, y: 50, z: 0}
+  fallThreshold: -15
+  animator: {fileID: 5956798123162258625}
 --- !u!143 &5332420050705641838
 CharacterController:
   m_ObjectHideFlags: 0
@@ -153,7 +156,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.15
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4974366271163454812
@@ -199,7 +202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b20df1c5d1c55f34290f9e044222c2c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b20df1c5d1c55f34290f9e044222c2c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -241,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 20792adb2a89ac643b9c81c853873a7d, type: 2}
+    - target: {fileID: 5866666021909216657, guid: b20df1c5d1c55f34290f9e044222c2c5, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -249,5 +256,10 @@ PrefabInstance:
 --- !u!4 &309306371846772411 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b20df1c5d1c55f34290f9e044222c2c5, type: 3}
+  m_PrefabInstance: {fileID: 270314920167108944}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5956798123162258625 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: b20df1c5d1c55f34290f9e044222c2c5, type: 3}
   m_PrefabInstance: {fileID: 270314920167108944}
   m_PrefabAsset: {fileID: 0}

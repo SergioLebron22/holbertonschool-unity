@@ -6,7 +6,9 @@ public class TimerTrigger : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        timerScript = FindObjectOfType<Timer>();
+        timerScript = FindObjectOfType<Timer>(true);
+        Debug.Log("Timer script found: " + (timerScript != null));
+
     }
 
     private void OnTriggerExit(Collider other) {

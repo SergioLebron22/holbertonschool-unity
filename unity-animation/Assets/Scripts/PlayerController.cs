@@ -24,10 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
-        Debug.Log($"isGrounded: {isGrounded}, velocity.y: {velocity.y}, IsFalling: {!isGrounded && velocity.y < -12f}");
+        Debug.Log($"isGrounded: {isGrounded}, velocity.y: {velocity.y}, IsFalling: {!isGrounded && velocity.y < -17f}");
 
         animator.SetBool("isGrounded", isGrounded);
-        animator.SetBool("IsFalling", !isGrounded && velocity.y < -12f); 
+        animator.SetBool("IsFalling", !isGrounded && velocity.y < -17f); 
 
         MovePlayer();
         ApplyGravity(); 
