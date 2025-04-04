@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class PauseMenu : MonoBehaviour
     public Timer timerScript;
     private bool isPaused = false;
     public AudioSource bgm;
+    public AudioMixerSnapshot paused;
+    public AudioMixerSnapshot unpaused;
+
     void Start()
     {
         timerScript = FindObjectOfType<Timer>();
@@ -30,6 +34,7 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.SetActive(true);
         Time.timeScale = 0f;
         timerScript.enabled = false;
+        Lowpass();
     }
 
     public void Resume() {
@@ -37,6 +42,16 @@ public class PauseMenu : MonoBehaviour
         pauseCanvas.SetActive(false);
         Time.timeScale = 1f;
         timerScript.enabled = true;
+        Lowpass();
+    }
+
+    void Lowpass() {
+        if (Time.timeScale == 0f) {
+            paused.TransitionTo(.01f);
+        }
+        else {
+            unpaused.TransitionTo(.01f);
+        }
     }
 
     public void Restart() {

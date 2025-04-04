@@ -5,6 +5,7 @@ public class WinTrigger : MonoBehaviour
     public Timer timerScript;
     public GameObject winCanvas;
     public AudioSource bgm;
+    public AudioClip victoryPiano;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,6 +19,9 @@ public class WinTrigger : MonoBehaviour
                 timerScript.Win();
                 winCanvas.SetActive(true);
                 bgm.Stop();
+                bgm.clip = victoryPiano;
+                bgm.loop = false;
+                bgm.Play();
             }
         }
     }

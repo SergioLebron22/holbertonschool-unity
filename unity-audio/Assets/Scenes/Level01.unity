@@ -979,6 +979,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64e800f4bc1b9d3488e85f1ba5c8873c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1227270617}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 64e800f4bc1b9d3488e85f1ba5c8873c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1227270620}
   m_SourcePrefab: {fileID: 100100000, guid: 64e800f4bc1b9d3488e85f1ba5c8873c, type: 3}
 --- !u!1001 &95779787
 PrefabInstance:
@@ -14629,6 +14632,103 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6548614976667701900, guid: 64e800f4bc1b9d3488e85f1ba5c8873c, type: 3}
+--- !u!82 &1227270620
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227270613}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 5572573006203129812, guid: b62fbe201e013054a94a51d4faa1bb47, type: 2}
+  m_audioClip: {fileID: 8300000, guid: fe9ce24fdd2d49f4ba2614fd629ff73b, type: 3}
+  m_Resource: {fileID: 8300000, guid: fe9ce24fdd2d49f4ba2614fd629ff73b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 2
+  MaxDistance: 15
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1228706208 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ffeb33cc1974fb04fbda3c132f8d4f0e, type: 3}
@@ -25198,6 +25298,10 @@ PrefabInstance:
       propertyPath: timerScript
       value: 
       objectReference: {fileID: 1545592406}
+    - target: {fileID: 3475052904397775241, guid: f32016c698692954ead696bd14d2ca19, type: 3}
+      propertyPath: victoryPiano
+      value: 
+      objectReference: {fileID: 8300000, guid: 46ab5e6f1bcc91e458f5941ca8cc8457, type: 3}
     - target: {fileID: 5064112414146402334, guid: f32016c698692954ead696bd14d2ca19, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -25598,6 +25702,14 @@ PrefabInstance:
       propertyPath: bgm
       value: 
       objectReference: {fileID: 823409464}
+    - target: {fileID: 8634605646118624446, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: paused
+      value: 
+      objectReference: {fileID: 5468607686146751950, guid: b62fbe201e013054a94a51d4faa1bb47, type: 2}
+    - target: {fileID: 8634605646118624446, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
+      propertyPath: unpaused
+      value: 
+      objectReference: {fileID: 24500006, guid: b62fbe201e013054a94a51d4faa1bb47, type: 2}
     - target: {fileID: 8634605646118624446, guid: 39c642cdb19edd147b719771548a2a33, type: 3}
       propertyPath: pauseCanvas
       value: 
