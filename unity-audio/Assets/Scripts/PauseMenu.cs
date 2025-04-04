@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseCanvas;
     public Timer timerScript;
     private bool isPaused = false;
-
+    public AudioSource bgm;
     void Start()
     {
         timerScript = FindObjectOfType<Timer>();
@@ -47,6 +47,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu() {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+        bgm.Stop();
     }
 
     public void Options() {
