@@ -15,22 +15,26 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     public Animator animator;
 
+    private AudioSource footstepAudio;
+    public AudioClip grassFootsteps;
+    public AudioClip stoneFootsteps;
+    private string currentSurfaceTag = "Grass";
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        footstepAudio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
         isGrounded = controller.isGrounded;
 
-        Debug.Log($"isGrounded: {isGrounded}, velocity.y: {velocity.y}, IsFalling: {!isGrounded && velocity.y < -17f}");
-
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("IsFalling", !isGrounded && velocity.y < -17f); 
 
         MovePlayer();
         ApplyGravity(); 
+
 
         if (transform.position.y <= fallThreshold)
         {
@@ -54,9 +58,14 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveDirection * speed * Time.deltaTime);
 
-        if (moveDirection != Vector3.zero) {
+        if (isGrounded && moveDirection != Vector3.zero) {
             Quaternion wantedRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, wantedRotation, rotationSpeed * Time.deltaTime);
+        }
+        else {
+            if (footstepAudio.isPlaying) {
+                footstepAudio.Stop();
+            }
         }
 
         animator.SetFloat("Speed", moveDirection.magnitude * speed);
@@ -68,6 +77,26 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Jump");
         }
 
+    }
+
+    public void PlayFootstepSounds() {
+        Debug.Log("Footstep sound played");
+        if (!footstepAudio.isPlaying) {
+            footstepAudio.clip = currentSurfaceTag == "Grass" ? grassFootsteps : stoneFootsteps;
+            footstepAudio.loop = true;
+            footstepAudio.Play();
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        Debug.Log("Colliding!");
+        
+        if (hit.gameObject.CompareTag("Grass")) {
+            currentSurfaceTag = "Grass";
+        }
+        else if (hit.gameObject.CompareTag("Stone")) {
+            currentSurfaceTag = "Stone";
+        }
     }
 
     void ApplyGravity()
