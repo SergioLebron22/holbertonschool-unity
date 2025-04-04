@@ -22,4 +22,13 @@ public class AnimationEventRelay : MonoBehaviour
             Debug.LogError("PlayerController not found!");
         }
     }
+
+    public void PlayLandingSound() {
+        if (playerController != null) {
+            playerController.PlayLandingSound();
+        }
+        else {
+            Debug.LogError("PlayerController not found!");
+        }
+    }
 }

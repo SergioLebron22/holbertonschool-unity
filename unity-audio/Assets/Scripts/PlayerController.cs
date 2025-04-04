@@ -16,13 +16,18 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private AudioSource footstepAudio;
+    private AudioSource landingAudio;
     public AudioClip grassFootsteps;
     public AudioClip stoneFootsteps;
+    public AudioClip grassLanding;
+    public AudioClip stoneLanding;
+
     private string currentSurfaceTag = "Grass";
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        footstepAudio = GetComponent<AudioSource>();
+        footstepAudio = GetComponents<AudioSource>()[0];
+        landingAudio = GetComponents<AudioSource>()[1];
     }
 
     void Update()
@@ -85,6 +90,14 @@ public class PlayerController : MonoBehaviour
             footstepAudio.clip = currentSurfaceTag == "Grass" ? grassFootsteps : stoneFootsteps;
             footstepAudio.loop = true;
             footstepAudio.Play();
+        }
+    }
+
+    public void PlayLandingSound() {
+        Debug.Log("Landed fall flat!");
+        if (isGrounded && !landingAudio.isPlaying) {
+            landingAudio.clip = currentSurfaceTag == "Grass" ? grassLanding : stoneLanding;
+            landingAudio.Play();
         }
     }
 
