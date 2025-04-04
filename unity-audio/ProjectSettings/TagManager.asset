@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Platform
+  - Stone
+  - Grass
   layers:
   - Default
   - TransparentFX
