@@ -125,6 +125,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerScript: {fileID: 0}
+  winCanvas: {fileID: 0}
+  bgm: {fileID: 0}
+  victoryPiano: {fileID: 8300000, guid: 46ab5e6f1bcc91e458f5941ca8cc8457, type: 3}
 --- !u!1001 &3963865983243803553
 PrefabInstance:
   m_ObjectHideFlags: 0

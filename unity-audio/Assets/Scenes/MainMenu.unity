@@ -1997,6 +1997,14 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 649210206}
+    - target: {fileID: 1451764488385769580, guid: 60500b6baf73ea24bb4cd955b577790d, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
+    - target: {fileID: 1451764488385769580, guid: 60500b6baf73ea24bb4cd955b577790d, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Play
+      objectReference: {fileID: 0}
     - target: {fileID: 2049695131481775749, guid: 60500b6baf73ea24bb4cd955b577790d, type: 3}
       propertyPath: m_Name
       value: ExitButton
@@ -2034,6 +2042,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuSFX
       objectReference: {fileID: 0}
+    - target: {fileID: 4337415349129918223, guid: b0ea7d598ebae2d4f878e2c2aad0ae79, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5572573006203129812, guid: b62fbe201e013054a94a51d4faa1bb47, type: 2}
+    - target: {fileID: 5678336747434520560, guid: b0ea7d598ebae2d4f878e2c2aad0ae79, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 5572573006203129812, guid: b62fbe201e013054a94a51d4faa1bb47, type: 2}
     - target: {fileID: 7840438639398534315, guid: b0ea7d598ebae2d4f878e2c2aad0ae79, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.3012576

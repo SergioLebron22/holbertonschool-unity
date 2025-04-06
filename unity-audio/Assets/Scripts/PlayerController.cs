@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 velocity;
     private bool isGrounded;
+    private bool canMove = true;
     public Animator animator;
 
     private AudioSource footstepAudio;
@@ -37,6 +38,10 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("IsFalling", !isGrounded && velocity.y < -17f); 
 
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        canMove = !(stateInfo.IsName("FallingDown") || stateInfo.IsName("Falling Flat Impact") || stateInfo.IsName("Getting Up"));
+
         MovePlayer();
         ApplyGravity(); 
 
@@ -49,6 +54,8 @@ public class PlayerController : MonoBehaviour
 
     void MovePlayer()
     {
+        if(!canMove) return;
+
         isGrounded = controller.isGrounded;
         if (isGrounded && velocity.y < 0) 
         {

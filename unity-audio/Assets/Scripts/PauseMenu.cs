@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart() {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Lowpass();
     }
 
     public void MainMenu() {
@@ -70,5 +71,6 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.Save();
         Time.timeScale = 1f;
         SceneManager.LoadScene(1);
+        Lowpass();
     }
 }
