@@ -5,14 +5,15 @@ const UnityLoader = ({ onIframeLoad }) => {
   useEffect(() => {
     const iframe = document.createElement("iframe");
     iframe.src = "BuildOutput/index.html"; // Replace with the actual path to your HTML file
-    iframe.style.width = "960px";
-    iframe.style.height = "660px";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
     iframe.style.border = "none";
-    iframe.style.position = "absolute";
-    iframe.style.top = "0";
-    iframe.style.left = "0";
 
-    document.body.appendChild(iframe);
+    // Append iframe to the parent container instead of document.body
+    const container = document.getElementById("gameLoaderContainer");
+    if (container) {
+      container.appendChild(iframe);
+    }
 
     const handleLoad = () => {
       const iframeWindow = iframe.contentWindow;
@@ -35,9 +36,11 @@ const UnityLoader = ({ onIframeLoad }) => {
 
     return () => {
       iframe.removeEventListener("load", handleLoad);
-      document.body.removeChild(iframe);
+      if (container) {
+        container.removeChild(iframe);
+      }
     };
-  }, [onIframeLoad]); // Add onIframeLoad to the dependency array
+  }, [onIframeLoad]);
 
   return null;
 };
