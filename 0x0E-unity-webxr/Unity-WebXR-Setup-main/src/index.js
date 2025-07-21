@@ -43,7 +43,7 @@ const App = () => {
   };
 
   const gameInfo = {
-    title: "Your WebXR Game Title",
+    title: "hbtn WebXR project",
     description: "Experience immersive virtual reality directly in your browser. This WebXR game pushes the boundaries of what's possible on the web, delivering console-quality graphics and gameplay.",
     features: [
       "Full WebXR support for VR headsets",
@@ -56,10 +56,10 @@ const App = () => {
   };
 
   const developerInfo = {
-    name: "Your Studio Name",
+    name: "Sergio Lebron",
     description: "We're passionate game developers creating cutting-edge WebXR experiences that bring virtual reality to everyone.",
-    contact: "contact@yourstudio.com",
-    website: "www.yourstudio.com"
+    contact: "lebronsergio22@gmail.com",
+   
   };
 
   return (
@@ -99,9 +99,10 @@ const App = () => {
               fontFamily: fonts.mono,
               fontSize: '14px',
               color: colors.textSecondary,
+              fontWeight: 'bold'
             }}
           >
-            LOGO PLACEHOLDER
+            WebXR Project
           </div>
         </div>
       </header>
@@ -157,149 +158,6 @@ const App = () => {
             }}
           >
             <UnityLoader onIframeLoad={handleIframeLoad} />
-          </div>
-        </section>
-
-        {/* Game Info Section */}
-        <section 
-          style={{
-            backgroundColor: colors.cardBackground,
-            border: `1px solid ${colors.border}`,
-            borderRadius: '12px',
-            padding: spacing.xl,
-            marginBottom: spacing.xl,
-          }}
-        >
-          <h2 
-            style={{
-              fontSize: '2rem',
-              marginBottom: spacing.md,
-              color: colors.highlight,
-              fontFamily: fonts.heading,
-            }}
-          >
-            About the Game
-          </h2>
-          
-          <p 
-            style={{
-              fontSize: '1.1rem',
-              marginBottom: spacing.lg,
-              color: colors.textSecondary,
-            }}
-          >
-            {gameInfo.description}
-          </p>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: spacing.lg }}>
-            {/* Features */}
-            <div>
-              <h3 
-                style={{
-                  fontSize: '1.3rem',
-                  marginBottom: spacing.sm,
-                  color: colors.text,
-                }}
-              >
-                Features
-              </h3>
-              <ul style={{ listStyle: 'none', padding: 0 }}>
-                {gameInfo.features.map((feature, index) => (
-                  <li 
-                    key={index}
-                    style={{
-                      padding: spacing.xs,
-                      marginBottom: spacing.xs,
-                      backgroundColor: colors.secondary,
-                      borderRadius: '4px',
-                      borderLeft: `4px solid ${colors.accent}`,
-                    }}
-                  >
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Requirements */}
-            <div>
-              <h3 
-                style={{
-                  fontSize: '1.3rem',
-                  marginBottom: spacing.sm,
-                  color: colors.text,
-                }}
-              >
-                System Requirements
-              </h3>
-              <p 
-                style={{
-                  padding: spacing.md,
-                  backgroundColor: colors.secondary,
-                  borderRadius: '8px',
-                  border: `1px solid ${colors.border}`,
-                }}
-              >
-                {gameInfo.requirements}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Developer Info Section */}
-        <section 
-          style={{
-            backgroundColor: colors.cardBackground,
-            border: `1px solid ${colors.border}`,
-            borderRadius: '12px',
-            padding: spacing.xl,
-            marginBottom: spacing.xl,
-          }}
-        >
-          <h2 
-            style={{
-              fontSize: '2rem',
-              marginBottom: spacing.md,
-              color: colors.highlight,
-              fontFamily: fonts.heading,
-            }}
-          >
-            About the Developer
-          </h2>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: spacing.lg }}>
-            <div>
-              <h3 
-                style={{
-                  fontSize: '1.3rem',
-                  marginBottom: spacing.sm,
-                  color: colors.text,
-                }}
-              >
-                {developerInfo.name}
-              </h3>
-              <p style={{ color: colors.textSecondary, marginBottom: spacing.md }}>
-                {developerInfo.description}
-              </p>
-            </div>
-            
-            <div>
-              <h4 
-                style={{
-                  fontSize: '1.1rem',
-                  marginBottom: spacing.sm,
-                  color: colors.text,
-                }}
-              >
-                Contact Information
-              </h4>
-              <p style={{ color: colors.textSecondary, marginBottom: spacing.xs }}>
-                Email: {developerInfo.contact}
-              </p>
-              <p style={{ color: colors.textSecondary }}>
-                Website: {developerInfo.website}
-              </p>
-            </div>
           </div>
         </section>
       </main>
